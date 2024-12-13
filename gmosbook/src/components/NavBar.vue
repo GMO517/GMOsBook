@@ -20,7 +20,7 @@ import logo from "@/assets/image/LogoWhite_Short.png";
 <style lang="scss" scoped>
 .navBar {
   margin: 0px;
-  margin-bottom: 20px;
+
   box-shadow: 1px 1px 6px black;
 }
 
