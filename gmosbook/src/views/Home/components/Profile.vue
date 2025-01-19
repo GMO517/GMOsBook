@@ -37,7 +37,13 @@ const skills = ref([
     <div class="content-text">
       <p>
         這些是我會的東西 <br />
-        下面是可以聯絡到我的方式
+        以及可以聯絡到我的方式<br />
+        信箱:
+        <a class="content-link" href="mailto:ra89517r@gmail.com"
+          >ra89517r@gmail</a
+        ><br />
+        手機: <a class="content-link" href="tel:+886955331108"> 0955331108</a
+        ><br />
       </p>
     </div>
 
@@ -118,20 +124,36 @@ const skills = ref([
 
 <style lang="scss" scoped>
 .main {
-  border: 2px solid black;
+  // border: 2px solid black;
+  padding: 1rem;
+  overflow: auto;
 }
+
 .main > div {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
+
 .title h2 {
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
 }
+
 .content-text p {
   text-align: center;
   font-weight: bold;
 }
+
+.content-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+  color: #1e3a8a;
+}
+
 .card-block {
   display: flex;
   justify-content: center;
@@ -180,7 +202,7 @@ const skills = ref([
 
 .skill-col {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 @media (min-width: 1024px) {
@@ -204,17 +226,19 @@ const skills = ref([
 .skill-content {
   background-color: var(--el-color-info-light-8);
   height: 3rem;
-  width: auto;
+  max-width: 100%;
   border-radius: 3px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.1rem;
-  padding-right: 0.2rem;
-  gap: 1.5rem;
+  padding: 0.2rem;
+  padding-right: 1rem;
+  gap: 0.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 0.02rem;
   line-height: 1.1;
+  color: #1e3a8a;
 
   img {
     margin: 0.5rem;

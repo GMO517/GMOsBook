@@ -2,22 +2,22 @@
 import Introduction from "./components/Introduction.vue";
 import Skill from "./components/Skill.vue";
 import Profile from "./components/Profile.vue";
-import From from "./components/From.vue";
 import Contact from "./components/Contact.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
   <div class="container">
     <Introduction />
     <Profile />
-    <Skill />
-    <From />
     <Contact />
+    <Footer />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .container {
+  background-color: var(--el-bg-color-page);
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -26,7 +26,9 @@ import Contact from "./components/Contact.vue";
 }
 .container > * {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
   box-sizing: border-box;
 }
 </style>
