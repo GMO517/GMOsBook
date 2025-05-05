@@ -1,50 +1,25 @@
-<script setup>
-import { ref } from "vue";
-import html from "@/assets/svg/html.svg";
-import css from "@/assets/svg/css.svg";
-import js from "@/assets/svg/Javascript.svg";
-import ts from "@/assets/svg/typescript-svgrepo-com.svg";
-import vue from "@/assets/svg/vue-fill-svgrepo-com.svg";
-import scss from "@/assets/svg/sass-svgrepo-com.svg";
-import TailwindCSS from "@/assets/svg/tailwind-svgrepo-com.svg";
-import Unity from "@/assets/svg/unity-svgrepo-com.svg";
-import csharp from "@/assets/svg/icons8-c-sharp-logo.svg";
-import git from "@/assets/svg/git-svgrepo-com.svg";
-import computer from "@/assets/svg/computer-monitor-svgrepo-com.svg";
-import print from "@/assets/image/3d-printer.png";
-
-const skills = ref([
-  { name: "HTML", image: html },
-  { name: "CSS", image: css },
-  { name: "JavaScript", image: js },
-  { name: "TypeScript", image: ts },
-  { name: "Vue3", image: vue },
-  { name: "SCSS", image: scss },
-  { name: "TailwindCSS", image: TailwindCSS },
-  { name: "Unity", image: Unity },
-  { name: "C#", image: csharp },
-  { name: "Git", image: git },
-  { name: "電腦組裝", image: computer },
-  { name: "3D列印", image: print },
-]);
-</script>
 <template>
   <div class="main">
     <div class="title">
-      <h2>關於我</h2>
+      <span>關於我</span>
     </div>
 
     <div class="content-text">
-      <p>
-        這些是我會的東西 <br />
-        以及可以聯絡到我的方式<br />
-        信箱:
-        <a class="content-link" href="mailto:ra89517r@gmail.com"
-          >ra89517r@gmail</a
-        ><br />
-        手機: <a class="content-link" href="tel:+886955331108"> 0955331108</a
-        ><br />
-      </p>
+      <el-row class="content-row">
+        <el-col :span="24">這些是我會的東西 以及可以聯絡到我的方式</el-col>
+        <el-col :span="24"
+          >信箱:
+          <a class="content-link" href="mailto:ra89517r@gmail.com"
+            >ra89517r@gmail</a
+          >
+        </el-col>
+        <el-col :span="24"
+          >手機:
+          <a class="content-link" href="tel:+886955331108">
+            0955331108</a
+          ></el-col
+        >
+      </el-row>
     </div>
 
     <div class="card-block">
@@ -122,26 +97,60 @@ const skills = ref([
   </div>
 </template>
 
+<script setup>
+import { ref } from "vue";
+import html from "@/assets/svg/html.svg";
+import css from "@/assets/svg/css.svg";
+import js from "@/assets/svg/Javascript.svg";
+import ts from "@/assets/svg/typescript-svgrepo-com.svg";
+import vue from "@/assets/svg/vue-fill-svgrepo-com.svg";
+import scss from "@/assets/svg/sass-svgrepo-com.svg";
+import TailwindCSS from "@/assets/svg/tailwind-svgrepo-com.svg";
+import Unity from "@/assets/svg/unity-svgrepo-com.svg";
+import csharp from "@/assets/svg/icons8-c-sharp-logo.svg";
+import git from "@/assets/svg/git-svgrepo-com.svg";
+import computer from "@/assets/svg/computer-monitor-svgrepo-com.svg";
+import print from "@/assets/image/3d-printer.png";
+
+const skills = ref([
+  { name: "HTML", image: html },
+  { name: "CSS", image: css },
+  { name: "JavaScript", image: js },
+  { name: "TypeScript", image: ts },
+  { name: "Vue3", image: vue },
+  { name: "SCSS", image: scss },
+  { name: "TailwindCSS", image: TailwindCSS },
+  { name: "Unity", image: Unity },
+  { name: "C#", image: csharp },
+  { name: "Git", image: git },
+  { name: "電腦組裝", image: computer },
+  { name: "3D列印", image: print },
+]);
+</script>
+
 <style lang="scss" scoped>
 .main {
-  // border: 2px solid black;
   padding: 1rem;
   overflow: auto;
+  margin-top: -7vh;
 }
 
 .main > div {
   margin-top: 2rem;
 }
 
-.title h2 {
-  text-align: center;
-  font-size: 2rem;
+.title span {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
   font-weight: 600;
+  margin-top: 7vh;
 }
 
-.content-text p {
+.content-row {
   text-align: center;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .content-link {
@@ -202,7 +211,7 @@ const skills = ref([
 
 .skill-col {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.5rem;
 }
 
 @media (min-width: 1024px) {
