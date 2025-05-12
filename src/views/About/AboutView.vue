@@ -1,22 +1,25 @@
 <template>
   <div class="about">
     <h1>元件設計練習</h1>
-
-    <el-collapse v-model="activeNames" @change="handleChange">
-      <el-collapse-item title="計數器">
+    <el-collapse>
+      <el-collapse-item title="1. 計數器元件">
         <!-- 計數器元件練習 -->
         <section class="counter-section">
-          <h2>1. 計數器元件練習</h2>
           <!-- :initial-value即為props -->
           <Counter :initial-value="0" @count-change="handleCountChange" />
-          <p>父元件中的計數：{{ parentCount }}</p>
-          <el-button @click="handleReset">重置</el-button>
+          <el-divider />
+          <el-row :gutter="20" class="counter-section-row">
+            <el-col :span="24" class="center-col">
+              <p>父元件中的計數：{{ parentCount }}</p>
+              <el-button @click="handleReset">重置</el-button>
+            </el-col>
+          </el-row>
         </section>
       </el-collapse-item>
-      <el-collapse-item title="插槽練習">
+
+      <el-collapse-item title="2. 插槽">
         <!-- slot練習 -->
         <section class="slot-section">
-          <h2>2. slot練習</h2>
           <SlotComponent>
             <!-- 預設插槽 -->
             <template #default>
@@ -90,6 +93,18 @@ const handleReset = () => {
     h2 {
       margin-bottom: 1rem;
     }
+  }
+  .counter-section-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 }
 </style>
