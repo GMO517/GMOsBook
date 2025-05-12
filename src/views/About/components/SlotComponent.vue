@@ -1,5 +1,5 @@
 <template>
-  <div class="slot-component" :class="{ 'dark-theme': theme.isDark.value }">
+  <div class="slot-component">
     <!-- 預設插槽 -->
     <div class="default-slot">
       <slot></slot>
@@ -18,9 +18,8 @@
 </template>
 
 <script setup>
-import { ref, inject } from "vue";
+import { ref } from "vue";
 
-const theme = inject("theme");
 const slotData = ref({
   message: "這是作用域插槽 字最大 由子組件控制 ",
   count: 0,
@@ -33,12 +32,7 @@ const slotData = ref({
   border: 1px solid #eee;
   border-radius: 8px;
   margin: 1rem 0;
-
-  &.dark-theme {
-    border-color: #333;
-    background-color: #2a2a2a;
-    color: #fff;
-  }
+  background-color: #f5f5f5;
 
   .default-slot,
   .named-slot,
@@ -47,14 +41,12 @@ const slotData = ref({
     padding: 1rem;
     background-color: #f5f5f5;
     border-radius: 4px;
-
-    .dark-theme & {
-      background-color: #333;
-    }
   }
+
   .named-slot {
     font-size: 1.5rem;
   }
+
   .scoped-slot {
     font-size: 2rem;
   }

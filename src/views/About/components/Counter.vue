@@ -1,5 +1,5 @@
 <template>
-  <div class="counter" :class="{ 'dark-theme': theme.isDark.value }">
+  <div class="counter">
     <el-button @click="decrement" type="primary" plain>-</el-button>
     <span class="counter-count">{{ count }}</span>
     <el-button @click="increment" type="primary" plain>+</el-button>
@@ -24,7 +24,6 @@ const emit = defineEmits(["count-change"]);
 
 const count = ref(props.initialValue);
 const shouldReset = inject("shouldReset");
-const theme = inject("theme");
 
 // 監聽重置信號
 watch(
@@ -62,20 +61,12 @@ watch(
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  transition: background-color 0.3s;
 
   .counter-count {
     font-size: 1.5rem;
     font-weight: bold;
     min-width: 2rem;
     text-align: center;
-    color: #000000;
-  }
-
-  &.dark-theme {
-    .counter-count {
-      color: #ffffff;
-    }
   }
 }
 </style>
